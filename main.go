@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	f, err := os.Open(os.Args[0])
+	f, err := os.Open(os.Args[1])
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println(err, os.Args[1])
 		return
 	}
 	buf := bytes.NewBuffer(nil)
@@ -20,5 +20,5 @@ func main() {
 		return
 	}
 
-	fmt.Printf("%#+v", buf.String())
+	fmt.Printf("%#+v\n", buf.String())
 }
